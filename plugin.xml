@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            file-extensions="suite"
+            id="TesboPlugin.suiteContentType"
+            name="suite"
+            priority="high">
+      </content-type>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="TesboPlugin.Mahesh"
+            name="Mahesh in command">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.jdt.ui.source.menu">
+         <separator
+               name="Seperate Kalpesh"
+               visible="true">
+         </separator>
+         <command
+               commandId="TesboPlugin.Mahesh"
+               label="Mahesh IN Menu"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="tesboplugin.handlers.MaheshHandler"
+            commandId="TesboPlugin.Mahesh">
+      </handler>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.editors">
+      
+      <editor
+            class="tesboplugin.editors.SuiteEditor"
+            contributorClass="tesboplugin.editors.MultiPageEditorContributor"
+            extensions="suite"
+            icon="icons/tesbo_icon.png"
+            id="tesboplugin.editors.SuiteEditor"
+            name="Sample Multi-page Editor">
+      </editor>
+      
+      <editorContentTypeBinding
+            contentTypeId="TesboPlugin.suiteContentType"
+            editorId="org.eclipse.ui.genericeditor.GenericEditor">
+      </editorContentTypeBinding>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.genericeditor.presentationReconcilers">
+       
+      <presentationReconciler
+            class="tesboplugin.editors.PropertiesReconciler"
+            contentType="TesboPlugin.suiteContentType">
+      </presentationReconciler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.icons">
+      <icon
+            contentType="TesboPlugin.suiteContentType"
+            icon="icons/tesbo_icon.png">
+      </icon>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.contentAssistProcessors">
+      <contentAssistProcessor
+            class="tesboplugin.editors.TesboContectAssistence"
+            contentType="TesboPlugin.suiteContentType">
+      </contentAssistProcessor>
+   </extension>
+   
+   
+
+   
+</plugin>
