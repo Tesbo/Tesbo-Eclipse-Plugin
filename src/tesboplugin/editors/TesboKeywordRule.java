@@ -2,12 +2,8 @@ package tesboplugin.editors;
 
 import org.eclipse.jface.text.TextAttribute;
 import org.eclipse.jface.text.rules.Token;
-import org.eclipse.jface.text.rules.WordPatternRule;
 import org.eclipse.jface.text.rules.WordRule;
-import org.eclipse.jface.text.templates.GlobalTemplateVariables.WordSelection;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
 
 

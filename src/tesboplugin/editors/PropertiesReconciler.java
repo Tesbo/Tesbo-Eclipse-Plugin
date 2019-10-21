@@ -35,7 +35,13 @@ public class PropertiesReconciler extends PresentationReconciler {
 	        PatternRule locatorRule = new PatternRule("@", " ", new Token(new TextAttribute(new Color(Display.getCurrent(), 215,79,102))), (char)0, true);
 
 	        PatternRule TestRule = new PatternRule("Test:", null, new Token(new TextAttribute(new Color(Display.getCurrent(), 243,67,62))), (char)0, true);
+	       
+	        
 	        scanner.setRules(new IRule[] { quote, quote2, wordRule, patternRule,locatorRule,TestRule});
+	        
+	        
+	        
+	        
 	        DefaultDamagerRepairer dr = new DefaultDamagerRepairer(scanner);
 	        this.setDamager(dr, IDocument.DEFAULT_CONTENT_TYPE);
 	        this.setRepairer(dr, IDocument.DEFAULT_CONTENT_TYPE);

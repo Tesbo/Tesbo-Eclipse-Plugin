@@ -1,6 +1,5 @@
 package tesboplugin.editors;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.eclipse.jface.text.BadLocationException;
@@ -29,14 +28,28 @@ public class TesboContectAssistence implements IContentAssistProcessor {
 			int lineTextLenght = offset - lineOffset;
 			String lineStartToOffsetValue = document.get(lineOffset, lineTextLenght).toLowerCase();
 
-			return Arrays.asList(PROPOSALS).stream()
+			
+
+			
+			return Arrays.asList(PROPOSALS).stream().filter(proposal ->  proposal.toLowerCase().startsWith(lineStartToOffsetValue)).map(proposal -> new CompletionProposal(proposal, lineOffset, lineTextLenght, proposal.length())).toArray(ICompletionProposal[]::new);
+			
+			
+			
+			
+
+			
+			
+			
+		/*	return Arrays.asList(PROPOSALS).stream()
 					.filter(proposal -> !viewer.getDocument().get().contains(proposal)
 							&& proposal.toLowerCase().startsWith(lineStartToOffsetValue))
 					.map(proposal -> new CompletionProposal(proposal, lineOffset, lineTextLenght, proposal.length()))
-					.toArray(ICompletionProposal[]::new);
+					.toArray(ICompletionProposal[]::new);*/
 		} catch (BadLocationException e) {
 			e.printStackTrace();
 		}
+		
+		System.out.println("Return From HERE ");
 		return new ICompletionProposal[0];
 		
 	}
@@ -46,7 +59,7 @@ public class TesboContectAssistence implements IContentAssistProcessor {
 		// TODO Auto-generated method stub
 		
 		
-		
+		System.out.println("Viewer" + viewer + "     " + offset);
 		
 		
 		
