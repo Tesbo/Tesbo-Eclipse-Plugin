@@ -46,6 +46,7 @@ public class TesboKeywordRule extends WordRule {
 		addWord("Else::", new Token(new TextAttribute(ifCondition)));
 		addWord("End::", new Token(new TextAttribute(ifCondition)));
 		addWord("Session:", new Token(new TextAttribute(dataSet)));
+
 		
 		
 		
@@ -54,6 +55,7 @@ public class TesboKeywordRule extends WordRule {
 		 
 		}
 		 
+
 
 		// TODO Auto-generated constructor stub
 	}

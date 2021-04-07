@@ -25,11 +25,13 @@ public class TesboContectAssistence implements IContentAssistProcessor {
 	            "is equal to","equal to","is contains","Pause","disappear","clickable","display","sec","coordinate","first element","last element",
 	            "less then","grater then","Select", "using text","using value","using index"};
 	
+
 	@Override
 	public ICompletionProposal[] computeCompletionProposals(ITextViewer viewer, int offset) {
 		IDocument document = viewer.getDocument();
 
 		try {
+
 			
 			
 			int lineNumber = document.getLineOfOffset(offset);
@@ -45,12 +47,14 @@ public class TesboContectAssistence implements IContentAssistProcessor {
 			String lineStartToOffsetValue = document.get(lineOffset, lineTextLenght).toLowerCase();
 
 			
+
 			System.out.println("+++++++++++++++++++++++++++++++");
 			System.out.println("offset" + offset);
 			System.out.println("lineNumber  " + lineNumber);
 			System.out.println("lineOffset  " + lineOffset);
 			System.out.println("lineTextLenght  " + lineTextLenght);
 			System.out.println("lineStartToOffsetValue  " + lineStartToOffsetValue);
+
 			
 			
 			String [] LineArray = 
@@ -77,30 +81,31 @@ public class TesboContectAssistence implements IContentAssistProcessor {
 					.map(proposal -> new CompletionProposal(proposal, (offset-LineArray[LineArray.length-1].length()), LineArray[LineArray.length-1].length(), proposal.length()))
 					.toArray(ICompletionProposal[]::new);
 			
+
 		} catch (BadLocationException e) {
 			e.printStackTrace();
 		}
 		return new ICompletionProposal[0];
-		
+
 	}
 
 	@Override
 	public IContextInformation[] computeContextInformation(ITextViewer viewer, int offset) {
 		// TODO Auto-generated method stub
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		return null;
 	}
 
