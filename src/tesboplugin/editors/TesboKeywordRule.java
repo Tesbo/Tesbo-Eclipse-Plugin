@@ -47,12 +47,14 @@ public class TesboKeywordRule extends WordRule {
 		addWord("End::", new Token(new TextAttribute(ifCondition)));
 		addWord("Session:", new Token(new TextAttribute(dataSet)));
 
-
-
-		for(int i = 0;i < tesboKeyword.length;i++) {
-			addWord(tesboKeyword[i], new Token(new TextAttribute(tesboKeysColor)));
-
+		
+		
+		
+		for(int i = 0;i < tesboKeyword.length;i++) { 
+		  addWord(tesboKeyword[i], new Token(new TextAttribute(tesboKeysColor)));
+		 
 		}
+		 
 
 
 		// TODO Auto-generated constructor stub
